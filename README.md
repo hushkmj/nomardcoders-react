@@ -10,4 +10,4 @@
 [✅] ReactJS로 영화 웹 서비스 만들기: From #3.0 to #3.3  
 [✅] 퀴즈  
 [✅] 간단한 내용정리  
-const [value, setValue] = useState(); //return [undefined, fn]
+const [value, setValue] = useState(); // return [undefined, fn]
