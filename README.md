@@ -9,7 +9,7 @@
 2024.02.20  
 [✅] ReactJS로 영화 웹 서비스 만들기: From #3.0 to #3.3  
 [✅] Quiz  
-[✅] 기억에 남는 코드  
+[✅] 기억에 남는 코드  
 ```
 const [value, setValue] = useState(); // return [undefined, fn]
 ```
