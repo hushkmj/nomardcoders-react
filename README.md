@@ -22,7 +22,7 @@ const [value, setValue] = useState(); // return [undefined, fn]
 setValue((current) => current + 1);
 ```
 
-``` html:hello.html
+``` html:index.html
 const [firstNum, setFirstNum] = React.useState();
 const onChangeForFirstNum = (event) => {  
   setFirstNum(event.target.value);
