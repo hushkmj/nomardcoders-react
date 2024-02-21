@@ -8,11 +8,29 @@
 
 2024.02.20  
 [✅] ReactJS로 영화 웹 서비스 만들기: From #3.0 to #3.3  
-[✅] Quiz  
-[✅] 간단한 내용정리  
+[✅] Quiz  
+[✅] 기억에 남는 코드  
+```
 const [value, setValue] = useState(); // return [undefined, fn]
+```
 
 2024.02.21  
-[] ReactJS로 영화 웹 서비스 만들기: From #3.4 to #3.9  
-[] Challenge: Calculator  
-[✅] 업무: spring file upload 설계  
+[✅] ReactJS로 영화 웹 서비스 만들기: From #3.4 to #3.9  
+[✅] Challenge: Calculator  
+[✅] 기억에 남는 코드
+```
+setValue((current) => current + 1);
+```
+
+``` html:hello.html
+const [firstNum, setFirstNum] = React.useState();
+const onChangeForFirstNum = (event) => {  
+  setFirstNum(event.target.value);
+}
+
+<input type="number" 
+  placeholder="Write a number..." 
+  value={firstNum}
+  onChange={onChangeForFirstNum}
+/>
+```
