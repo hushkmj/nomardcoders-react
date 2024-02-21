@@ -17,7 +17,7 @@ const [value, setValue] = useState(); // return [undefined, fn]
 2024.02.21  
 [✅] ReactJS로 영화 웹 서비스 만들기: From #3.4 to #3.9  
 [✅] Challenge: Calculator  
-[✅] 기억에 남는 코드
+[✅] 기억에 남는 코드  
 ```
 setValue((current) => current + 1);
 ```
@@ -27,8 +27,9 @@ const [firstNum, setFirstNum] = React.useState();
 const onChangeForFirstNum = (event) => {  
   setFirstNum(event.target.value);
 }
-
-<input type="number" 
+// value, onChange 는 세트로 기억할 것.
+<input
+  type="number" 
   placeholder="Write a number..." 
   value={firstNum}
   onChange={onChangeForFirstNum}
