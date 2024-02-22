@@ -1,5 +1,15 @@
 # nomardcoders-react  
 노마드코더 리액트 스터디 10주 챌린지  
+
+### 2024.02.22  
+[✅] ReactJS로 영화 웹 서비스 만들기: From #4.0 to #4.3  
+[✅] Quiz
+[✅] 기억에 남는 코드  
+```
+function Theme({color, background}) // props is Object
+React.memo // Only changed props re-render 
+PropTypes // Custom component validate
+```
   
 ### 2024.02.21  
 [✅] ReactJS로 영화 웹 서비스 만들기: From #3.4 to #3.9  
