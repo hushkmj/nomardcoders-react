@@ -3,7 +3,7 @@
 
 ### 2024.02.22  
 [✅] ReactJS로 영화 웹 서비스 만들기: From #4.0 to #4.3  
-[✅] Quiz
+[✅] Quiz  
 [✅] 기억에 남는 코드  
 ```
 function Theme({color, background}) // props is Object
