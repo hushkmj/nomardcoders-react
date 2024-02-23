@@ -1,6 +1,14 @@
 # nomardcoders-react  
 노마드코더 리액트 스터디 10주 챌린지  
 
+### 2024.02.23  
+[✅] ReactJS로 영화 웹 서비스 만들기: From #5.0 to #6.4  
+[✅] Quiz  
+[✅] 기억에 남는 코드  
+```
+useEffect is allows us to run code at specific moments of the component's lifecycle
+```
+
 ### 2024.02.22  
 [✅] ReactJS로 영화 웹 서비스 만들기: From #4.0 to #4.3  
 [✅] Quiz  
