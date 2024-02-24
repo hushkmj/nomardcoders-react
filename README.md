@@ -2,6 +2,25 @@
 노마드코더 리액트 스터디 10주 챌린지  
 
 ### 2024.02.23  
+[] ReactJS로 영화 웹 서비스 만들기: From #7.0 to #7.10  
+[] Challenge: Marvelous React  
+[✅] 기억에 남는 코드  
+```
+const [toDo, setTodo] = useState("");
+const [toDos, setToDos] = userState([]);
+const onChange = (event) => setToDo(event.target.value);
+const onSubmit = (event) =>{
+  event.preventDefault();
+  if(toDo === ""){
+    return;
+  }
+  setTodos((currentArray)-> [todo, ...currentArray])
+  setToDo("")
+}
+
+```
+
+### 2024.02.23  
 [✅] ReactJS로 영화 웹 서비스 만들기: From #5.0 to #6.4  
 [✅] Quiz  
 [✅] 기억에 남는 코드  
