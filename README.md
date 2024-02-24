@@ -1,7 +1,7 @@
 # 노마드코더 리액트 스터디 10주 챌린지  
 
 ### 2024.02.24  
-[] ReactJS로 영화 웹 서비스 만들기: From #7.0 to #7.10  
+[✅] ReactJS로 영화 웹 서비스 만들기: From #7.0 to #7.10  
 [] Challenge: Marvelous React  
 [✅] 기억에 남는 코드  
 ```
