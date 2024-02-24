@@ -18,7 +18,7 @@ const onSubmit = (event) =>{
   setToDo("")
 }
 
-//  #7.1
+// #7.1
 <ul>
   {toDos.map((item, index)) => (
     <li key={index}>{item}</li>
