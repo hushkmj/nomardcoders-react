@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/nomardcoders-react/static/css/main.31d6cfe0.css",
-    "main.js": "/nomardcoders-react/static/js/main.ca2c9546.js",
+    "main.css": "/nomardcoders-react/static/css/main.af2513a0.css",
+    "main.js": "/nomardcoders-react/static/js/main.e4b5764b.js",
     "index.html": "/nomardcoders-react/index.html",
-    "main.ca2c9546.js.map": "/nomardcoders-react/static/js/main.ca2c9546.js.map"
+    "main.af2513a0.css.map": "/nomardcoders-react/static/css/main.af2513a0.css.map",
+    "main.e4b5764b.js.map": "/nomardcoders-react/static/js/main.e4b5764b.js.map"
   },
   "entrypoints": [
-    "static/css/main.31d6cfe0.css",
-    "static/js/main.ca2c9546.js"
+    "static/css/main.af2513a0.css",
+    "static/js/main.e4b5764b.js"
   ]
 }
