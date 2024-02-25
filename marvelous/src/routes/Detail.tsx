@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SubContens from "../components/SubContents";
+import styled from "./Detail.module.css"
 
 type Props = {
   id: string;
@@ -46,17 +47,30 @@ function Detail() {
   return (
     <div>
       {loading ? <h1>Loading</h1> :
-        <div>
+        <div className={styled.container}>
           {chrDatas.map((item) => (
             <div key={item.id}>
-              <img src={item.thumbnail.path + "." + item.thumbnail.extension} />
-              <div>
-                <h1>{item.name}</h1>
-                <p>{item.description}</p>
+              <div className={styled.contents}>
+                <div className={styled.thumbnail}>
+                  <img src={item.thumbnail.path + "." + item.thumbnail.extension} />
+                </div>
+                <div className={styled.back}><Link to={"/"}>Back</Link></div>
+                <div className={styled.info}>
+                  <div>Name</div>
+                  <div>{item.name}</div>
+                </div>
+                {item.description === '' ? null :
+                  <div className={styled.info}>
+                    <div>Description</div>
+                    <div>{item.description}</div>
+                  </div>
+                }
               </div>
-              <SubContens name={"Comics"} contents={item.comics} />
-              <SubContens name={"Series"} contents={item.series} />
-              <SubContens name={"stories"} contents={item.stories} />
+              <div>
+                <SubContens name={"Comics"} contents={item.comics} />
+                <SubContens name={"Series"} contents={item.series} />
+                <SubContens name={"Stories"} contents={item.stories} />
+              </div>
             </div>
           ))}
         </div>

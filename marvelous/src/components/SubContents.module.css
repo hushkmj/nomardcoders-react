@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.container>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  padding: 10px;
+}
+
+.container>div:first-child {
+  font-weight: 600;
+  font-size: xx-large;
+}

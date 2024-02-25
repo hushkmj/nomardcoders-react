@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Charecters from "../components/Charecters";
+import styled from "./Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -18,10 +19,10 @@ function Home() {
   }, []);
 
   return (
-    <>
+    <div>
       {loading ? <h1>Loading</h1> :
-        <section>
-          <ul>
+        <div className={styled.container}>
+          <div className={styled.contents}>
             {
               characterList.map((charecter) => (
                 <Charecters
@@ -33,10 +34,10 @@ function Home() {
                 />
               ))
             }
-          </ul>
-        </section>
+          </div>
+        </div>
       }
-    </>
+    </div>
   )
 }
 

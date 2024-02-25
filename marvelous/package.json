@@ -45,5 +45,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://hushkmj.github.io/nomardcoders-react"
+  "homepage": "https://hushkmj.github.io/nomardcoders-react",
+  "devDependencies": {
+    "@types/css-modules": "^1.0.5"
+  }
 }

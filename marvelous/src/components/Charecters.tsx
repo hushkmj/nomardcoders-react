@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import styled from "./Charecters.module.css";
 
 type CharacterList = {
   id: string,
@@ -12,14 +13,15 @@ type CharacterList = {
 
 function Charecters({ id, name, thumbnail, description }: CharacterList) {
   return (
-    <li>
-      <img src={thumbnail.path + "." + thumbnail.extension} />
-      <div>
-        <Link to={`/character/${id}`}>
-          <h1>{name}</h1>
-        </Link>
+    <div className={styled.content}>
+      <Link to={`/character/${id}`} className={styled.thumbnail} >
+        <img src={thumbnail.path + "." + thumbnail.extension} />
+      </Link>
+      <div className={styled.title}>
+        <span>{name}</span>
       </div>
-    </li>
+
+    </div>
   )
 }
 
