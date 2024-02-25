@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Charecters from "../components/Charecters";
 import styled from "./Home.module.css";
 

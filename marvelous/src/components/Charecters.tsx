@@ -11,7 +11,7 @@ type CharacterList = {
   description: string
 }
 
-function Charecters({ id, name, thumbnail, description }: CharacterList) {
+function Charecters({ id, name, thumbnail }: CharacterList) {
   return (
     <div className={styled.content}>
       <Link to={`/character/${id}`} className={styled.thumbnail} >
