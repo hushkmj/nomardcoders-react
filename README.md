@@ -4,7 +4,7 @@
 ### 2024.02.27  
 [✅] Typescript로 블록체인 만들기: From #2.2 to #3.1  
 [✅] Quiz  
-[✅] 기억에 남는 코드  
+[✅] 코드메모  
 ```
 /*
   For what do we use Type Aliases? => To create a new name for a type
