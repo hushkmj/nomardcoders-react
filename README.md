@@ -1,5 +1,17 @@
 # 노마드코더 리액트 스터디 10주 챌린지  
 
+
+### 2024.02.27  
+[✅] Typescript로 블록체인 만들기: From #2.2 to #3.1  
+[✅] Quiz  
+[✅] 기억에 남는 코드  
+```
+/*
+  For what do we use Type Aliases? => To create a new name for a type
+  타입의 별칭이 필요한 이유를 타입이 필요한 이유로 착각함.
+*/
+```  
+
 ### 2024.02.26  
 [✅] Typescript로 블록체인 만들기: From #1.5 to #2.1  
 [✅] Quiz  
