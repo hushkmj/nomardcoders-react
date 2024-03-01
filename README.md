@@ -1,6 +1,47 @@
 # 노마드코더 리액트 스터디 10주 챌린지  
 
+### 2024.03.01  
+[✅] Typescript로 블록체인 만들기: From #4.0 to #4.2  
+[✅] Challenge: Classes  
+[✅] 코드메모  
+```
+/*
+  - 클래스를 타입처럼 쓸 수 있다.
+  - 생성자는 클래스로부터 객체를 생성할 때 즉시 호출된다. 객체의 초기화하는데 주로 사용됨.
+*/
+type Words = {
+    [key:string]:string;
+}
+class Word {
+    constructor(
+        public name:string,
+        public description:string
+    ){}
+}
+class Dict {
+    private words:Words;
+    constructor(){
+        this.words = {}
+    }
+  ...
+}
+``` 
+### 2024.02.29  
+[] Typescript로 블록체인 만들기: From #4.0 to #4.2  
+[] Challenge: Classes  
+[] 코드메모  
 
+### 2024.02.28  
+[✅] Typescript로 블록체인 만들기: From #3.2 to #3.4  
+[✅] Challenge: Generics  
+[✅] 코드메모  
+```
+/* 타입스크립트 문법에 익숙해져간다. */
+type Slice = <T>(arr: T[], startIndex: number, endIndex?: number) => T[]
+const slice:Slice = (arr, startIndex, endIndex) => {
+    return arr.slice(startIndex, endIndex)
+}
+```
 ### 2024.02.27  
 [✅] Typescript로 블록체인 만들기: From #2.2 to #3.1  
 [✅] Quiz  
