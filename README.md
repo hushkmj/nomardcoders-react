@@ -1,5 +1,15 @@
 # 노마드코더 리액트 스터디 10주 챌린지  
 
+### 2024.03.08  
+[✅] React JS 마스터클래스: From #5.0 to #5.11  
+[✅] Challenge: Routing + Fetching  
+[✅] 생각정리  
+```
+/*
+  업무와 스터디를 병행한다는게 쉽지 않구나...
+*/
+```
+
 ### 2024.03.01  
 [✅] Typescript로 블록체인 만들기: From #4.0 to #4.2  
 [✅] Challenge: Classes  
