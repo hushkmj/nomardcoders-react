@@ -1,6 +1,5 @@
-
 import { useQuery } from "@tanstack/react-query";
-import styled from "styled-components"
+import styled from "styled-components";
 import { fetchCoins } from "../api";
 import { Link } from "react-router-dom";
 
@@ -21,7 +20,7 @@ const CoinsList = styled.ul``;
 
 const Coin = styled.li`
   background-color: white;
-  color: ${(props) => props.theme.bgColor};
+  color: ${(props) => props.theme.textColor};
   border-radius: 15px;
   margin-bottom: 10px;
   a {
@@ -64,10 +63,10 @@ interface ICoin {
 }
 
 function Coins() {
-  const {isLoading , data} = useQuery<ICoin[]>({
+  const { isLoading, data } = useQuery<ICoin[]>({
     queryKey: ["allCoins"],
-    queryFn: fetchCoins
-  })
+    queryFn: fetchCoins,
+  });
   return (
     <Container>
       <Header>
@@ -80,7 +79,7 @@ function Coins() {
           {data?.slice(0, 100).map((coin) => (
             <Coin key={coin.id}>
               <Link
-                to={{pathname: `/${coin.id}`}}
+                to={{ pathname: `/${coin.id}` }}
                 state={{ name: coin.name }}
               >
                 <Img
@@ -93,7 +92,7 @@ function Coins() {
         </CoinsList>
       )}
     </Container>
-  )
+  );
 }
 
-export default Coins
+export default Coins;

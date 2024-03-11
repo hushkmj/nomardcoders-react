@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Link, Outlet, useLocation, useMatch, useParams } from "react-router-dom";
+import {
+  Link,
+  Outlet,
+  useLocation,
+  useMatch,
+  useParams,
+} from "react-router-dom";
 import styled from "styled-components";
 import { fetchCoinInfo, fetchCoinTickers } from "../api";
 import Chart from "./Chart";
@@ -32,7 +38,7 @@ const Header = styled.header`
 const Overview = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 10px 20px;
   border-radius: 10px;
 `;
@@ -41,6 +47,7 @@ const OverviewItem = styled.div`
   flex-direction: column;
   align-items: center;
   width: 33%;
+  color: ${(props) => props.theme.textColor};
   span:first-child {
     font-size: 10px;
     font-weight: 400;
@@ -64,7 +71,7 @@ const Tab = styled.span<{ isActive: boolean }>`
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 400;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   color: ${(props) =>
     props.isActive ? props.theme.accentColor : props.theme.textColor};
@@ -134,12 +141,12 @@ function Coin() {
   const priceMatch = useMatch("/:coinId/price");
   const chartMatch = useMatch("/:coinId/chart");
   const { isLoading: infoLoading, data: infoData } = useQuery<InfoData>({
-    queryKey:["info", coinId],
-    queryFn:() => fetchCoinInfo(coinId!)
+    queryKey: ["info", coinId],
+    queryFn: () => fetchCoinInfo(coinId!),
   });
   const { isLoading: tickersLoading, data: tickersData } = useQuery<PriceData>({
-    queryKey:["tickers", coinId],
-    queryFn:() => fetchCoinTickers(coinId!)
+    queryKey: ["tickers", coinId],
+    queryFn: () => fetchCoinTickers(coinId!),
   });
 
   const loading = infoLoading || tickersLoading;
@@ -188,7 +195,7 @@ function Coin() {
               <Link to={`/${coinId}/price`}>Price</Link>
             </Tab>
           </Tabs>
-          <Outlet/>
+          <Outlet />
         </>
       )}
     </Container>

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
 import Router from "./routers/Router";
 import { RouterProvider } from "react-router-dom";
-import { createGlobalStyle } from "styled-components";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { darkTheme, lightTheme } from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
@@ -57,8 +58,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Source Sans 3", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: ${props => props.theme.bgColor};
-    color: ${props => props.theme.textColor};
+    background-color: ${(props) => props.theme.bgColor};
+    color: ${(props) => props.theme.textColor};
     line-height: 1.2;
     font-weight: 300;
   }
@@ -66,16 +67,21 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color:inherit;
   }
-`
+`;
 
 function App() {
+  const [isDark, setIsDark] = useState(false);
+  const toggleDark = () => setIsDark((current) => !current);
   return (
     <>
-      <GlobalStyle />
-      <RouterProvider router={Router} />
-      <ReactQueryDevtools initialIsOpen={true} />
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
+        <button onClick={toggleDark}>Toggle Mode</button>
+        <GlobalStyle />
+        <RouterProvider router={Router} />
+        <ReactQueryDevtools initialIsOpen={true} />
+      </ThemeProvider>
     </>
-  )
+  );
 }
 
 export default App;
