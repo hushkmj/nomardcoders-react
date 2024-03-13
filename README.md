@@ -1,5 +1,57 @@
 # 노마드코더 리액트 스터디 10주 챌린지  
 
+### 2024.03.13  
+[✅] React JS 마스터클래스: From #6.0 to #6.10  
+[✅] Challenge: Recoil + Forms  
+[✅] 기억에 남는 코드  
+```
+export type ICountry = {
+  key: number;
+  value: string;
+};
+export interface ICountryList {
+  wantToVisit: ICountry[];
+  visited: ICountry[];
+  liked: ICountry[];
+}
+export const countryListAtom = atom<ICountryList>({
+  key: "countryList",
+  default: {
+    wantToVisit: [],
+    visited: [],
+    liked: [],
+  },
+});
+
+const [countries, setCountries] = useRecoilState(countryListAtom);
+  const countryList = useRecoilValue(countryListAtom);
+
+  const fnChangeCountry = (item: ICountry, flag: string) => {
+    const targetIndex = countries.wantToVisit.findIndex(
+      (obj) => obj.key === item.key
+    );
+
+    if (flag === "add") {
+      setCountries((prev) => ({
+        ...prev,
+        wantToVisit: [
+          ...prev.wantToVisit.slice(0, targetIndex),
+          ...prev.wantToVisit.slice(targetIndex + 1),
+        ],
+        visited: [...prev.visited, { key: item.key, value: item.value }],
+      }));
+    } else {
+      setCountries((prev) => ({
+        ...prev,
+        wantToVisit: [
+          ...prev.wantToVisit.slice(0, targetIndex),
+          ...prev.wantToVisit.slice(targetIndex + 1),
+        ],
+      }));
+    }
+  };
+```
+
 ### 2024.03.08  
 [✅] React JS 마스터클래스: From #5.0 to #5.11  
 [✅] Challenge: Routing + Fetching  
