@@ -1,8 +1,8 @@
 # 노마드코더 리액트 스터디 10주 챌린지  
 
 ### 2024.03.16  
-[✅] React JS 마스터클래스: From #8.0 to #8.16  
-[] Challenge: Pomodoro  
+[🔜] React JS 마스터클래스: From #8.0 to #8.16  
+[🔜] Challenge: Pomodoro  
 [✅] 기억에 남는 코드 : https://github.com/hushkmj/nomardcoders-react/blob/main/animation/README.md  
 
 ### 2024.03.13  
