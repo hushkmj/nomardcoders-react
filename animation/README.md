@@ -322,9 +322,9 @@ function App() {
 
 ## Slider
 
-AnimatePresence 활용
-custom은 variants에 파라미터를 전달할 수 있다.
-파라미터를 전달받은 variants는 이를 사용하려면 화살표함수로 변경시켜줘야 한다.
+AnimatePresence 활용  
+custom은 variants에 파라미터를 전달할 수 있다.  
+파라미터를 전달받은 variants는 이를 사용하려면 화살표함수로 변경시켜줘야 한다.  
 
 ```
 const Wrapper = styled(motion.div)`
