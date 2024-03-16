@@ -1,24 +1,19 @@
-import { motion } from "framer-motion";
-import { useRef } from "react";
+import {
+  motion,
+  useMotionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
-  height: 100vh;
+const Wrapper = styled(motion.div)`
+  height: 200vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const BiggerBox = styled.div`
-  width: 600px;
-  height: 600px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* overflow: hidden; */
+  background: linear-gradient(135deg, rgb(238, 0, 153), rgb(221, 0, 238));
 `;
 
 const Box = styled(motion.div)`
@@ -31,32 +26,27 @@ const Box = styled(motion.div)`
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
-const boxVariants = {
-  hover: { scale: 1.5, rotateZ: 90 },
-  click: { borderRadius: "100px" },
-  drag: {
-    backgroundColor: "rgba(50, 255, 126,1.0)",
-    transition: { duration: 5 }, // 컴포넌트를 드래그중에 백그라운드컬러가 전환되는 시간을 설정한다.
-  },
-};
-
 function App() {
-  const biggerBoxRef = useRef<HTMLDivElement>(null); // 특정 Element를 잡는 리액트 훅
+  const x = useMotionValue(0); // State가 아님 > 변화가 있어도 재랜더링되지 않음.
+  const rotateZ = useTransform(x, [-800, 800], [-360, 360]);
+  const gradient = useTransform(
+    x,
+    [-800, 800],
+    [
+      "linear-gradient(135deg, rgb(0, 242, 247), rgb(75, 136, 249))",
+      "linear-gradient(135deg, rgb(0, 238, 178), rgb(238, 178, 0))",
+    ]
+  );
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    //Box style={{x}}의 좌표를 추적함.
+    console.log("scrollYProgress: ", latest);
+  });
   return (
-    <Wrapper>
-      {/* 아래의 BiggerBox는 biggerBoxRef 코드조각하고 연결됨 */}
-      <BiggerBox ref={biggerBoxRef}>
-        <Box
-          drag //컴포넌트를 드래그할 수 있게 하는 속성
-          dragSnapToOrigin // 드래그를 마친 컴포넌트가 본래 자리로 돌아감.
-          dragElastic={0.5} // 드래그중인 컴포넌트를 본래 자리로 '당기는 힘'
-          dragConstraints={biggerBoxRef} //드래그의 이동범위를 제약한다. (biggerBoxRef == BiggerBox)
-          variants={boxVariants}
-          whileHover={"hover"} // 컴포넌트에 마우스를 올려둘때의 이벤트 속성
-          whileTap={"click"} // 컴포넌트에 마우스를 클릭했을때의 이벤트 속성
-          whileDrag={"drag"}
-        />
-      </BiggerBox>
+    <Wrapper style={{ background: gradient }}>
+      <button onClick={() => x.set(200)}>click me</button>
+      <Box style={{ x, rotateZ, scale }} drag="x" dragSnapToOrigin />
     </Wrapper>
   );
 }
