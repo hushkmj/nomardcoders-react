@@ -27,6 +27,12 @@ module.exports = {
     },
 };
 ```
+- package.json 수정
+```
+"start": "craco start"
+"build": "craco build"
+"test": "craco test"ß
+```
 
 ## 2. 레이아웃 구성
 
