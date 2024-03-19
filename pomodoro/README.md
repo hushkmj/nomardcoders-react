@@ -27,7 +27,9 @@ module.exports = {
     },
 };
 ```
+
 - package.json 수정
+
 ```
 "start": "craco start"
 "build": "craco build"
@@ -36,13 +38,15 @@ module.exports = {
 
 ## 2. 레이아웃 구성
 
-- header, contents, footer
+- header, layout, footer
 - 퍼블리싱(애니메이션 제외)부터 구현
 - 단위테스트
 
 ## 3. 기능 구현
 
 - 타이머 감소 이벤트 구현
+  setInterval, useEffect, atom, useRecoilValue
+
 - 시작/정지 버튼 이벤트 구현
 - ROUND 구현
 - GOAL 구현

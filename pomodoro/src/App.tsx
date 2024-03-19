@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from "./Layouts/Header";
-import Content from "./Layouts/Content";
+import Layout from "./Layouts/Layout";
 import Footer from "./Layouts/Footer";
 
 const Wrapper = styled.div`
@@ -19,7 +19,7 @@ function App() {
   return (
     <Wrapper>
       <Header />
-      <Content />
+      <Layout />
       <Footer />
     </Wrapper>
   );
