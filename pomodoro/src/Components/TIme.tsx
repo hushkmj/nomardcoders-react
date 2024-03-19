@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Time = styled.div`
+const Number = styled.div`
   width: 150px;
   height: 250px;
   border-radius: 25px;
@@ -10,3 +10,17 @@ export const Time = styled.div`
   align-items: center;
   font-size: 100px;
 `;
+
+interface ITime {
+  value: number;
+}
+
+function Time({ value }: ITime) {
+  return (
+    <>
+      <Number>{value >= 10 ? value : `0${value}`}</Number>
+    </>
+  );
+}
+
+export default Time;
